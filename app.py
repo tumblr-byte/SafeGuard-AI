@@ -172,7 +172,7 @@ if 'total_threats_blocked' not in st.session_state:
 if 'response_times' not in st.session_state:
     st.session_state.response_times = []
 
-# Load AI model (cached)
+
 @st.cache_resource
 def load_model():
     return pipeline("text-classification", model="unitary/toxic-bert")
@@ -184,7 +184,7 @@ except Exception as e:
     model_loaded = False
     st.error(f"Error loading model: {e}")
 
-# Detect threat function
+
 def detect_threat(text):
     if not model_loaded:
         return {'is_threat': False, 'confidence': 0, 'severity': 'NONE'}
@@ -233,12 +233,12 @@ def detect_threat(text):
             'response_time': response_time
         }
 
-# Check for pattern attacks
+
 def check_pattern_attack():
     if len(st.session_state.threat_history) < 2:
         return None
     
-    recent_threats = st.session_state.threat_history[-5:]  # Check last 5
+    recent_threats = st.session_state.threat_history[-5:]  
     
     if len(recent_threats) >= 2:
         # Check if threats are within 5 minutes of each other
@@ -366,7 +366,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 st.markdown('<p class="sub-header">Real-time Harassment Detection with Blockchain Evidence</p>', unsafe_allow_html=True)
 
-# WOW FACTOR #1: Real-time threat counter
+
 st.markdown("### 📈 Live Protection Statistics")
 col1, col2, col3, col4 = st.columns(4)
 
@@ -449,7 +449,7 @@ if st.session_state.current_view == 'post_owner':
         st.markdown("---")
         st.markdown("### 🚨 Threat Notifications")
         
-        # WOW FACTOR #3: Pattern detection
+       
         pattern_attack = check_pattern_attack()
         if pattern_attack:
             with st.container():
@@ -682,7 +682,7 @@ else:  # Commenter view
                     
                     st.balloons()
     
-    # Show existing comments
+   
     st.markdown("---")
     st.markdown("### 💬 Posted Comments")
     
@@ -929,7 +929,7 @@ with tab3:
     **Together, we can make the internet a safer place.** 🛡️
     """)
 
-# Footer
+
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #6b7280; padding: 20px;'>
@@ -940,6 +940,7 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
