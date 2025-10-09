@@ -586,7 +586,6 @@ else:  # Commenter view
                 analysis = detect_threat(comment_text)
                 
                 if analysis['is_threat']:
-                    # WOW FACTOR #2: Threat severity gauge
                     st.markdown('<div class="threat-alert">', unsafe_allow_html=True)
                     st.markdown("### ⚠️ THREAT DETECTED - COMMENT BLOCKED!")
                     
@@ -940,6 +939,7 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
