@@ -509,7 +509,7 @@ else:  # Commenter view
     with col_profile:
         # Try to load profile picture
         try:
-            st.image("img.jpg", width=80)
+            st.image("img.png", width=80)
         except:
             st.markdown('<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">👤</div>', unsafe_allow_html=True)
         st.markdown('<div style="text-align: center; margin-top: 5px;"><span class="user-badge">@sarah_dev</span></div>', unsafe_allow_html=True)
@@ -915,3 +915,4 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
