@@ -1,14 +1,7 @@
-streamlit
-elasticsearch
-google-cloud-aiplatform
-annotated-text
-pandas
-
-
-
 
 streamlit==1.31.0
 transformers==4.36.0
 torch==2.1.0
 pandas==2.1.0
+
 plotly==5.18.0
