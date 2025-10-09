@@ -400,11 +400,15 @@ if st.session_state.current_view == 'post_owner':
     
     # Display the post
     st.markdown('<div class="post-card">', unsafe_allow_html=True)
-    col_profile, col_content = st.columns([1, 4])
+    col_profile, col_content = st.columns([1, 5])
     
     with col_profile:
-        st.markdown("### 👤")
-        st.markdown('<span class="user-badge">@sarah_dev</span>', unsafe_allow_html=True)
+        # Try to load profile picture
+        try:
+            st.image("img.png", width=80)
+        except:
+            st.markdown('<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">👤</div>', unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin-top: 5px;"><span class="user-badge">@sarah_dev</span></div>', unsafe_allow_html=True)
     
     with col_content:
         st.markdown("### Just completed my AI project! 🎉")
@@ -437,26 +441,26 @@ if st.session_state.current_view == 'post_owner':
         if pattern_attack:
             st.markdown(f"""
             <div class="pattern-alert">
-                <h3>🚨 COORDINATED ATTACK DETECTED!</h3>
-                <p><strong>⚠️ Multiple threats targeting your account</strong></p>
+                <h3 style="margin-top: 0; font-size: 1.5rem;">🚨 COORDINATED ATTACK DETECTED!</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>⚠️ Multiple threats targeting your account</strong></p>
                 
-                <h4>Threat Pattern Analysis:</h4>
-                <ul>
-                    <li><strong>Attack Accounts:</strong> {', '.join(['@' + acc for acc in pattern_attack['accounts']])}</li>
-                    <li><strong>Threats Detected:</strong> {pattern_attack['threat_count']} threats</li>
-                    <li><strong>Time Span:</strong> Within {pattern_attack['time_span']}</li>
-                    <li><strong>Status:</strong> ⛓️ All evidence logged to blockchain</li>
-                </ul>
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                    <h4 style="margin-top: 0; font-size: 1.2rem; margin-bottom: 12px;">📊 Threat Pattern Analysis</h4>
+                    <p style="margin: 8px 0;"><strong>🎭 Attack Accounts:</strong> {', '.join(['@' + acc for acc in pattern_attack['accounts']])}</p>
+                    <p style="margin: 8px 0;"><strong>🎯 Threats Detected:</strong> {pattern_attack['threat_count']} threats</p>
+                    <p style="margin: 8px 0;"><strong>⏱️ Time Span:</strong> Within {pattern_attack['time_span']}</p>
+                    <p style="margin: 8px 0;"><strong>📝 Status:</strong> ⛓️ All evidence logged to blockchain</p>
+                </div>
                 
-                <h4>⚠️ ESCALATING HARASSMENT CAMPAIGN</h4>
+                <h4 style="font-size: 1.3rem; margin: 20px 0 15px 0; text-align: center;">⚠️ ESCALATING HARASSMENT CAMPAIGN</h4>
                 
-                <p><strong>Recommended Actions:</strong></p>
-                <ul>
-                    <li>✓ All accounts flagged for review</li>
-                    <li>✓ IP tracking recommended</li>
-                    <li>✓ Report to Cybercrime Portal</li>
-                    <li>✓ Legal evidence preserved in blockchain</li>
-                </ul>
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin-top: 15px;">
+                    <h4 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 12px;">🛡️ Recommended Actions</h4>
+                    <p style="margin: 8px 0;">✅ All accounts flagged for review</p>
+                    <p style="margin: 8px 0;">✅ IP tracking recommended</p>
+                    <p style="margin: 8px 0;">✅ Report to Cybercrime Portal</p>
+                    <p style="margin: 8px 0;">✅ Legal evidence preserved in blockchain</p>
+                </div>
             </div>
             """, unsafe_allow_html=True)
         
@@ -465,22 +469,20 @@ if st.session_state.current_view == 'post_owner':
             
             st.markdown(f"""
             <div class="threat-alert">
-                <h4>⚠️ THREAT BLOCKED</h4>
-                <p><strong>From:</strong> @{blocked['username']}</p>
-                <p><strong>Type:</strong> {blocked['threat_type']}</p>
-                <p><strong>Severity:</strong> <span class="{severity_class}">{blocked['severity']}</span></p>
-                <p><strong>Time:</strong> {blocked['timestamp']}</p>
-                <p><strong>Status:</strong> ✅ Blocked & Logged to Blockchain (Block #{blocked['block_index']})</p>
+                <h4 style="margin-top: 0; font-size: 1.3rem;">⚠️ THREAT BLOCKED</h4>
+                <p style="margin: 8px 0;"><strong>👤 From:</strong> @{blocked['username']}</p>
+                <p style="margin: 8px 0;"><strong>🎯 Type:</strong> {blocked['threat_type']}</p>
+                <p style="margin: 8px 0;"><strong>⚡ Severity:</strong> <span class="{severity_class}">{blocked['severity']}</span></p>
+                <p style="margin: 8px 0;"><strong>🕒 Time:</strong> {blocked['timestamp']}</p>
+                <p style="margin: 8px 0;"><strong>✅ Status:</strong> Blocked & Logged to Blockchain (Block #{blocked['block_index']})</p>
                 
-                <hr style="border-color: rgba(255,255,255,0.3);">
-                
-                <p><strong>Actions Taken:</strong></p>
-                <ul>
-                    <li>✅ Content blocked from your view</li>
-                    <li>✅ You have been protected</li>
-                    <li>✅ Evidence preserved for legal action</li>
-                    <li>✅ Account flagged for review</li>
-                </ul>
+                <div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 15px 0; padding-top: 15px;">
+                    <p style="margin-bottom: 10px; font-size: 1.05rem;"><strong>🛡️ Actions Taken:</strong></p>
+                    <p style="margin: 6px 0; padding-left: 10px;">✅ Content blocked from your view</p>
+                    <p style="margin: 6px 0; padding-left: 10px;">✅ You have been protected</p>
+                    <p style="margin: 6px 0; padding-left: 10px;">✅ Evidence preserved for legal action</p>
+                    <p style="margin: 6px 0; padding-left: 10px;">✅ Account flagged for review</p>
+                </div>
             </div>
             """, unsafe_allow_html=True)
         
@@ -502,11 +504,15 @@ else:  # Commenter view
     
     # Display the post (same as above)
     st.markdown('<div class="post-card">', unsafe_allow_html=True)
-    col_profile, col_content = st.columns([1, 4])
+    col_profile, col_content = st.columns([1, 5])
     
     with col_profile:
-        st.markdown("### 👤")
-        st.markdown('<span class="user-badge">@sarah_dev</span>', unsafe_allow_html=True)
+        # Try to load profile picture
+        try:
+            st.image("img.jpg", width=80)
+        except:
+            st.markdown('<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">👤</div>', unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center; margin-top: 5px;"><span class="user-badge">@sarah_dev</span></div>', unsafe_allow_html=True)
     
     with col_content:
         st.markdown("### Just completed my AI project! 🎉")
@@ -719,22 +725,22 @@ with tab1:
             with st.expander(f"🔗 Block #{block['index']} - {block['data']['incident_id']}"):
                 st.markdown(f"""
                 <div class="blockchain-block">
-                    <h4>Block #{block['index']}</h4>
-                    <p><strong>Timestamp:</strong> {block['timestamp']}</p>
-                    <p><strong>Previous Hash:</strong> {block['previous_hash'][:32]}...</p>
-                    <p><strong>Current Hash:</strong> {block['hash'][:32]}...</p>
+                    <h4 style="margin-top: 0; color: #667eea; font-size: 1.3rem;">⛓️ Block #{block['index']}</h4>
+                    <p style="margin: 8px 0;"><strong>🕒 Timestamp:</strong> {block['timestamp']}</p>
+                    <p style="margin: 8px 0; word-break: break-all;"><strong>🔗 Previous Hash:</strong> {block['previous_hash'][:32]}...</p>
+                    <p style="margin: 8px 0; word-break: break-all;"><strong>🔐 Current Hash:</strong> {block['hash'][:32]}...</p>
                     
-                    <hr>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 15px 0; padding-top: 15px;">
+                        <h4 style="margin-top: 0; color: #f59e0b; font-size: 1.2rem;">📊 Threat Data</h4>
+                        <p style="margin: 6px 0;"><strong>🆔 Incident ID:</strong> {block['data']['incident_id']}</p>
+                        <p style="margin: 6px 0;"><strong>👤 Username:</strong> @{block['data']['username']}</p>
+                        <p style="margin: 6px 0;"><strong>⚠️ Threat Type:</strong> {block['data']['threat_type']}</p>
+                        <p style="margin: 6px 0;"><strong>📊 Severity:</strong> {block['data']['severity']}</p>
+                        <p style="margin: 6px 0;"><strong>🎯 Confidence:</strong> {block['data']['confidence']}</p>
+                        <p style="margin: 6px 0; word-break: break-all;"><strong>#️⃣ Content Hash:</strong> {block['data']['text_hash']}</p>
+                    </div>
                     
-                    <h4>Threat Data:</h4>
-                    <p><strong>Incident ID:</strong> {block['data']['incident_id']}</p>
-                    <p><strong>Username:</strong> @{block['data']['username']}</p>
-                    <p><strong>Threat Type:</strong> {block['data']['threat_type']}</p>
-                    <p><strong>Severity:</strong> {block['data']['severity']}</p>
-                    <p><strong>Confidence:</strong> {block['data']['confidence']}</p>
-                    <p><strong>Content Hash:</strong> {block['data']['text_hash']}</p>
-                    
-                    <p style="margin-top: 15px; color: #10b981;">✓ This evidence is immutable and cannot be modified or deleted</p>
+                    <p style="margin-top: 15px; color: #10b981; font-weight: bold; text-align: center;">✓ This evidence is immutable and cannot be modified or deleted</p>
                 </div>
                 """, unsafe_allow_html=True)
 
