@@ -439,52 +439,57 @@ if st.session_state.current_view == 'post_owner':
         # WOW FACTOR #3: Pattern detection
         pattern_attack = check_pattern_attack()
         if pattern_attack:
-            st.markdown(f"""
-            <div class="pattern-alert">
-                <h3 style="margin-top: 0; font-size: 1.5rem;">🚨 COORDINATED ATTACK DETECTED!</h3>
-                <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>⚠️ Multiple threats targeting your account</strong></p>
-                
-                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin: 15px 0;">
-                    <h4 style="margin-top: 0; font-size: 1.2rem; margin-bottom: 12px;">📊 Threat Pattern Analysis</h4>
-                    <p style="margin: 8px 0;"><strong>🎭 Attack Accounts:</strong> {', '.join(['@' + acc for acc in pattern_attack['accounts']])}</p>
-                    <p style="margin: 8px 0;"><strong>🎯 Threats Detected:</strong> {pattern_attack['threat_count']} threats</p>
-                    <p style="margin: 8px 0;"><strong>⏱️ Time Span:</strong> Within {pattern_attack['time_span']}</p>
-                    <p style="margin: 8px 0;"><strong>📝 Status:</strong> ⛓️ All evidence logged to blockchain</p>
+            with st.container():
+                st.markdown("""
+                <div class="pattern-alert">
+                    <h3 style="margin-top: 0; font-size: 1.5rem;">🚨 COORDINATED ATTACK DETECTED!</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>⚠️ Multiple threats targeting your account</strong></p>
                 </div>
+                """, unsafe_allow_html=True)
                 
-                <h4 style="font-size: 1.3rem; margin: 20px 0 15px 0; text-align: center;">⚠️ ESCALATING HARASSMENT CAMPAIGN</h4>
+                st.markdown("### 📊 Threat Pattern Analysis")
+                col_p1, col_p2 = st.columns(2)
                 
-                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin-top: 15px;">
-                    <h4 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 12px;">🛡️ Recommended Actions</h4>
-                    <p style="margin: 8px 0;">✅ All accounts flagged for review</p>
-                    <p style="margin: 8px 0;">✅ IP tracking recommended</p>
-                    <p style="margin: 8px 0;">✅ Report to Cybercrime Portal</p>
-                    <p style="margin: 8px 0;">✅ Legal evidence preserved in blockchain</p>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+                with col_p1:
+                    st.write(f"**🎭 Attack Accounts:** {', '.join(['@' + acc for acc in pattern_attack['accounts']])}")
+                    st.write(f"**🎯 Threats Detected:** {pattern_attack['threat_count']} threats")
+                
+                with col_p2:
+                    st.write(f"**⏱️ Time Span:** Within {pattern_attack['time_span']}")
+                    st.write(f"**📝 Status:** ⛓️ All evidence logged to blockchain")
+                
+                st.error("### ⚠️ ESCALATING HARASSMENT CAMPAIGN")
+                
+                st.markdown("### 🛡️ Recommended Actions")
+                st.write("✅ All accounts flagged for review")
+                st.write("✅ IP tracking recommended")
+                st.write("✅ Report to Cybercrime Portal")
+                st.write("✅ Legal evidence preserved in blockchain")
+                
+                st.markdown("</div>", unsafe_allow_html=True)
         
         for blocked in st.session_state.blocked_comments[-3:]:  # Show last 3
             severity_class = f"severity-{blocked['severity'].lower()}"
             
-            st.markdown(f"""
-            <div class="threat-alert">
-                <h4 style="margin-top: 0; font-size: 1.3rem;">⚠️ THREAT BLOCKED</h4>
-                <p style="margin: 8px 0;"><strong>👤 From:</strong> @{blocked['username']}</p>
-                <p style="margin: 8px 0;"><strong>🎯 Type:</strong> {blocked['threat_type']}</p>
-                <p style="margin: 8px 0;"><strong>⚡ Severity:</strong> <span class="{severity_class}">{blocked['severity']}</span></p>
-                <p style="margin: 8px 0;"><strong>🕒 Time:</strong> {blocked['timestamp']}</p>
-                <p style="margin: 8px 0;"><strong>✅ Status:</strong> Blocked & Logged to Blockchain (Block #{blocked['block_index']})</p>
-                
-                <div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 15px 0; padding-top: 15px;">
-                    <p style="margin-bottom: 10px; font-size: 1.05rem;"><strong>🛡️ Actions Taken:</strong></p>
-                    <p style="margin: 6px 0; padding-left: 10px;">✅ Content blocked from your view</p>
-                    <p style="margin: 6px 0; padding-left: 10px;">✅ You have been protected</p>
-                    <p style="margin: 6px 0; padding-left: 10px;">✅ Evidence preserved for legal action</p>
-                    <p style="margin: 6px 0; padding-left: 10px;">✅ Account flagged for review</p>
+            # Create container for threat alert
+            with st.container():
+                st.markdown(f"""
+                <div class="threat-alert">
+                    <h4 style="margin-top: 0; font-size: 1.3rem;">⚠️ THREAT BLOCKED</h4>
+                    <p style="margin: 8px 0;"><strong>👤 From:</strong> @{blocked['username']}</p>
+                    <p style="margin: 8px 0;"><strong>🎯 Type:</strong> {blocked['threat_type']}</p>
+                    <p style="margin: 8px 0;"><strong>⚡ Severity:</strong> <span class="{severity_class}">{blocked['severity']}</span></p>
+                    <p style="margin: 8px 0;"><strong>🕒 Time:</strong> {blocked['timestamp']}</p>
+                    <p style="margin: 8px 0;"><strong>✅ Status:</strong> Blocked & Logged to Blockchain (Block #{blocked['block_index']})</p>
                 </div>
-            </div>
-            """, unsafe_allow_html=True)
+                """, unsafe_allow_html=True)
+                
+                st.markdown("**🛡️ Actions Taken:**")
+                st.write("✅ Content blocked from your view")
+                st.write("✅ You have been protected")
+                st.write("✅ Evidence preserved for legal action")
+                st.write("✅ Account flagged for review")
+                st.markdown("</div>", unsafe_allow_html=True)
         
         # Download report button
         if st.button("📥 Download Threat Report (CSV)", type="primary"):
@@ -722,27 +727,34 @@ with tab1:
         st.success(f"📊 Total blocks: {len(threat_blocks)}")
         
         for block in reversed(threat_blocks):
-            with st.expander(f"🔗 Block #{block['index']} - {block['data']['incident_id']}"):
-                st.markdown(f"""
-                <div class="blockchain-block">
-                    <h4 style="margin-top: 0; color: #667eea; font-size: 1.3rem;">⛓️ Block #{block['index']}</h4>
-                    <p style="margin: 8px 0;"><strong>🕒 Timestamp:</strong> {block['timestamp']}</p>
-                    <p style="margin: 8px 0; word-break: break-all;"><strong>🔗 Previous Hash:</strong> {block['previous_hash'][:32]}...</p>
-                    <p style="margin: 8px 0; word-break: break-all;"><strong>🔐 Current Hash:</strong> {block['hash'][:32]}...</p>
-                    
-                    <div style="border-top: 1px solid rgba(255,255,255,0.3); margin: 15px 0; padding-top: 15px;">
-                        <h4 style="margin-top: 0; color: #f59e0b; font-size: 1.2rem;">📊 Threat Data</h4>
-                        <p style="margin: 6px 0;"><strong>🆔 Incident ID:</strong> {block['data']['incident_id']}</p>
-                        <p style="margin: 6px 0;"><strong>👤 Username:</strong> @{block['data']['username']}</p>
-                        <p style="margin: 6px 0;"><strong>⚠️ Threat Type:</strong> {block['data']['threat_type']}</p>
-                        <p style="margin: 6px 0;"><strong>📊 Severity:</strong> {block['data']['severity']}</p>
-                        <p style="margin: 6px 0;"><strong>🎯 Confidence:</strong> {block['data']['confidence']}</p>
-                        <p style="margin: 6px 0; word-break: break-all;"><strong>#️⃣ Content Hash:</strong> {block['data']['text_hash']}</p>
-                    </div>
-                    
-                    <p style="margin-top: 15px; color: #10b981; font-weight: bold; text-align: center;">✓ This evidence is immutable and cannot be modified or deleted</p>
-                </div>
-                """, unsafe_allow_html=True)
+            with st.expander(f"🔗 Block #{block['index']} - {block['data']['incident_id']}", expanded=False):
+                # Block Header
+                st.markdown(f"### ⛓️ Block #{block['index']}")
+                
+                col_b1, col_b2 = st.columns(2)
+                with col_b1:
+                    st.write(f"**🕒 Timestamp:** {block['timestamp']}")
+                    st.write(f"**🔗 Previous Hash:** `{block['previous_hash'][:32]}...`")
+                with col_b2:
+                    st.write(f"**🔐 Current Hash:** `{block['hash'][:32]}...`")
+                
+                st.markdown("---")
+                
+                # Threat Data
+                st.markdown("### 📊 Threat Data")
+                col_t1, col_t2 = st.columns(2)
+                
+                with col_t1:
+                    st.write(f"**🆔 Incident ID:** {block['data']['incident_id']}")
+                    st.write(f"**👤 Username:** @{block['data']['username']}")
+                    st.write(f"**⚠️ Threat Type:** {block['data']['threat_type']}")
+                
+                with col_t2:
+                    st.write(f"**📊 Severity:** {block['data']['severity']}")
+                    st.write(f"**🎯 Confidence:** {block['data']['confidence']}")
+                    st.write(f"**#️⃣ Content Hash:** `{block['data']['text_hash']}`")
+                
+                st.success("✓ This evidence is immutable and cannot be modified or deleted")
 
 with tab2:
     st.markdown("### 📊 Detection Analytics")
@@ -915,4 +927,3 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
-
