@@ -357,6 +357,7 @@ st.markdown("""
     background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     text-align: center;
     margin-bottom: 0;
 ">
@@ -939,4 +940,5 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
 
