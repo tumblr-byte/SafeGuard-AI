@@ -554,29 +554,7 @@ else:  # Commenter view
             key="comment_input"
         )
     
-    # Quick test buttons
-    st.markdown("**🧪 Quick Test Examples:**")
-    col_btn1, col_btn2, col_btn3, col_btn4 = st.columns(4)
-    
-    with col_btn1:
-        if st.button("✅ Safe Comment"):
-            comment_text = "Great work! This is amazing! 🎉"
-            username = "friend_user"
-    
-    with col_btn2:
-        if st.button("⚠️ Mild Threat"):
-            comment_text = "You're so stupid and annoying"
-            username = "angry_user"
-    
-    with col_btn3:
-        if st.button("🚨 Violent Threat"):
-            comment_text = "I will hurt you badly, you deserve to die"
-            username = "bad_user"
-    
-    with col_btn4:
-        if st.button("🔴 Sexual Harassment"):
-            comment_text = "I will rape you, you deserve it"
-            username = "harasser_123"
+   
     
     # Post comment button
     if st.button("📤 Post Comment", type="primary", disabled=not comment_text):
@@ -939,6 +917,7 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
