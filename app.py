@@ -351,17 +351,17 @@ with st.sidebar:
 
 # Main header
 st.markdown("""
-<h1 style="
-    font-size: 3rem;
-    font-weight: 800;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    text-align: center;
-    margin-bottom: 0;
-">
-🛡️ SafeSpot AI
+<h1 style="text-align: center; margin-bottom: 0;">
+    <span style="
+        font-size: 3rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    ">
+        🛡️ SafeSpot AI
+    </span>
 </h1>
 """, unsafe_allow_html=True)
 st.markdown('<p class="sub-header">Real-time Harassment Detection with Blockchain Evidence</p>', unsafe_allow_html=True)
@@ -940,5 +940,6 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
