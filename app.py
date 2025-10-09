@@ -697,7 +697,7 @@ else:  # Commenter view
 st.markdown("---")
 st.markdown("## 🔗 Additional Features")
 
-tab1, tab2, tab3 = st.tabs(["⛓️ Blockchain Explorer", "📊 Analytics Dashboard", "📖 About Project"])
+tab1, tab2 = st.tabs(["⛓️ Blockchain Explorer", "📊 Analytics Dashboard"])
 
 with tab1:
     st.markdown("### ⛓️ Blockchain Evidence Trail")
@@ -822,89 +822,6 @@ with tab2:
             
             st.success("✅ All responses under 1 second - Real-time protection achieved!")
 
-with tab3:
-    st.markdown("### 📖 About SafeSpot AI")
-    
-    st.markdown("""
-    ## 🎯 Project Overview
-    
-    **SafeSpot AI** is an advanced harassment detection system that combines **Artificial Intelligence** 
-    and **Blockchain technology** to protect users from online threats in real-time.
-    
-    ---
-    
-    ## 🔬 How It Works
-    
-    ### 1️⃣ **AI Detection Layer**
-    - Uses **Toxic-BERT** model (trained on millions of online comments)
-    - Analyzes text in **under 500ms**
-    - Detects: Sexual harassment, violent threats, hate speech, abusive language
-    - **93%+ accuracy** in threat detection
-    - Supports English and Hinglish
-    
-    ### 2️⃣ **Blockchain Evidence Layer**
-    - Every threat is logged to **immutable blockchain**
-    - Creates tamper-proof evidence for legal cases
-    - Stores: Timestamp, threat type, severity, content hash
-    - Chain integrity can be verified at any time
-    
-    ### 3️⃣ **Pattern Detection Layer**
-    - Identifies coordinated harassment attacks
-    - Links multiple accounts targeting same user
-    - Detects escalation patterns
-    - Alerts authorities about organized campaigns
-    
-    ---
-    
-    ## 💡 Key Features
-    
-    - **Real-time Detection**: Threats blocked in milliseconds
-    - **Legal Evidence**: Blockchain-backed proof for cybercrime reports
-    - **Pattern Recognition**: Identifies coordinated attacks
-    - **Privacy-First**: Only stores hashes, not actual content
-    - **Transparent**: All actions are logged and verifiable
-    
-    ---
-    
-    ## 🛠️ Technical Stack
-    
-    - **AI/ML**: Transformers, Toxic-BERT, NLP
-    - **Blockchain**: Custom implementation with SHA-256
-    - **Frontend**: Streamlit, Plotly
-    - **Languages**: Python
-    
-    ---
-    
-    ## 🎯 Impact
-    
-    This system aims to:
-    - Protect millions of Indian women from online harassment
-    - Provide legal evidence for cybercrime cases
-    - Detect and prevent coordinated attacks
-    - Make social media safer for everyone
-    
-    ---
-    
-    ## 👥 Use Cases
-    
-    1. **Social Media Platforms**: Protect users from harassment
-    2. **Law Enforcement**: Evidence for cybercrime investigations
-    3. **Corporate HR**: Monitor workplace communication
-    4. **Educational Institutions**: Prevent cyberbullying
-    
-    ---
-    """)
-    
-    st.markdown("---")
-    
-    st.success("""
-    ### 🎯 Thank You!
-    
-    This project represents hope for a safer digital India. Every line of code written here 
-    is dedicated to protecting those who face harassment online.
-    
-    **Together, we can make the internet a safer place.** 🛡️
-    """)
 
 
 st.markdown("---")
@@ -917,6 +834,7 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
