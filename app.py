@@ -350,7 +350,19 @@ with st.sidebar:
         st.rerun()
 
 # Main header
-st.markdown('<h1 class="main-header">🛡️ SafeSpot AI</h1>', unsafe_allow_html=True)
+st.markdown("""
+<h1 style="
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 0;
+">
+🛡️ SafeSpot AI
+</h1>
+""", unsafe_allow_html=True)
 st.markdown('<p class="sub-header">Real-time Harassment Detection with Blockchain Evidence</p>', unsafe_allow_html=True)
 
 # WOW FACTOR #1: Real-time threat counter
@@ -927,3 +939,4 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
