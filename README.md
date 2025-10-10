@@ -18,6 +18,10 @@ It is designed to detect, record, and prevent online harassment, providing victi
 [Watch the Demo](https://youtu.be/Gg1QYGLMs-I)
 
 
+## Live Demo  
+[SafeGuard AI](https://safeguard-ai.streamlit.app/)
+
+
 
 ![Image](https://github.com/user-attachments/assets/721df96f-6e36-4d29-9f75-26912974e348)
 
