@@ -106,43 +106,17 @@ Helps protect users by providing early warnings and allowing for escalation or r
 
 ---
 
-## Key Features  
+## Key Features
 
-### Beautiful UI/UX  
-- Modern gradient design (UX/UI designed with assistance from **Claude AI**)  
-- Responsive layout  
-- Intuitive navigation  
-- Dual views: Post Owner & Commenter  
+| Feature Category       | Highlights                                                                 |
+|------------------------|---------------------------------------------------------------------------|
+| **Beautiful UI/UX**    | - Modern gradient design (UX/UI designed with **Claude AI**) <br> - Responsive layout <br> - Intuitive navigation <br> - Dual views: Post Owner & Commenter |
+| **AI-Powered Detection** | - Real-time threat analysis <br> - Confidence scoring <br> - Multi-category detection |
+| **Blockchain Security** | - Immutable evidence logging <br> - SHA-256 hashing <br> - Chain verification <br> - Built-in Blockchain Explorer |
+| **Smart Alerts**       | - Pattern attack detection <br> - Severity gauges <br> - Real-time notifications <br> - Coordinated attack warnings |
+| **Analytics Dashboard** | - Live threat statistics <br> - Severity and type distribution <br> - Timeline visualizations <br> - Graphs created using **Plotly** <br> - System performance metrics |
+| **Evidence Export**     | - Download threat reports (CSV) <br> - Court-ready documentation <br> - Complete incident history <br> - Blockchain proof included |
 
-### AI-Powered Detection  
-- Real-time threat analysis  
-- Confidence scoring  
-- Multi-category detection  
-
-### Blockchain Security  
-- Immutable evidence logging  
-- SHA-256 hashing  
-- Chain verification  
-- Built-in Blockchain Explorer  
-
-### Smart Alerts  
-- Pattern attack detection  
-- Severity gauges  
-- Real-time notifications  
-- Coordinated attack warnings  
-
-### Analytics Dashboard  
-- Live threat statistics  
-- Severity and type distribution  
-- Timeline visualizations  
-- Graphs created using **Plotly** for better insights  
-- System performance metrics  
-
-### Evidence Export  
-- Download threat reports (CSV)  
-- Court-ready documentation  
-- Complete incident history  
-- Blockchain proof included  
 
 ---
 
