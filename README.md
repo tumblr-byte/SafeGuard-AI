@@ -14,6 +14,11 @@ It is designed to detect, record, and prevent online harassment, providing victi
 
 ---
 
+![Image](https://github.com/user-attachments/assets/721df96f-6e36-4d29-9f75-26912974e348)
+
+
+
+
 ## Quick Stats  
 
 | Metric             | Value                      |
@@ -143,12 +148,14 @@ Helps protect users by providing early warnings and allowing for escalation or r
 
 ---
 
+ 
+
 ## Personal Contributions and Learning  
 
-- Learned about **BERT** and applied the pre-trained model for real-time harassment detection.  
-- Implemented **coordinated attack detection** linking multiple accounts.  
-- Created interactive **graphs using Plotly** to visualize attack patterns and threat statistics.  
-- Assisted with UX/UI design using **Claude AI**.  
+- Learned about **BERT** and how it is used for real-time harassment detection.  
+- Studied **coordinated attack detection** techniques linking multiple accounts.  
+- Learned to create interactive **graphs using Plotly** to visualize attack patterns and threat statistics.  
+- Assisted with UX/UI design using **Claude AI**.
 
 ---
 
@@ -157,7 +164,7 @@ Helps protect users by providing early warnings and allowing for escalation or r
 - Language Expansion: Add support for Indian regional languages (Tamil, Bengali, Marathi, Telugu, etc.)  
 - Victim Support Network: Integration with helplines, NGOs, and law enforcement for direct reporting  
 - Custom Dataset Training: Train on custom dataset to improve accuracy and correct labels (Normal, Neutral, Hate, Sexual harassment, etc.)  
-- Legal Reporting Automation: Auto-generate FIR-ready evidence reports for faster justice delivery  
+ 
 
 ---
 
