@@ -9,7 +9,7 @@ import hashlib
 
 # Page configuration
 st.set_page_config(
-    page_title="SafeSpot AI - Harassment Detection",
+    page_title="SafeGuard AI - Harassment Detection",
     page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -327,7 +327,7 @@ with st.sidebar:
     
     st.markdown("### ℹ️ About")
     st.info("""
-    **SafeSpot AI** protects users from online harassment using:
+    **SafeGuard AI** protects users from online harassment using:
     
     🤖 **AI Detection**: Real-time threat analysis
     
@@ -360,7 +360,7 @@ st.markdown("""
         -webkit-text-fill-color: transparent;
         display: inline-block;
     ">
-        🛡️ SafeSpot AI
+        🛡️ SafeGuard AI
     </span>
 </h1>
 """, unsafe_allow_html=True)
@@ -827,13 +827,14 @@ with tab2:
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #6b7280; padding: 20px;'>
-    <p><strong>SafeSpot AI</strong> | Built with ❤️ for Thales GenTech Hackathon 2025</p>
+    <p><strong>SafeGuard AI</strong> | Built with ❤️ for Thales GenTech Hackathon 2025</p>
     <p>🛡️ Protecting Digital India | 🤖 Powered by AI | ⛓️ Secured by Blockchain</p>
     <p style='font-size: 0.9rem; margin-top: 10px;'>
         <strong>Tech Stack:</strong> Python • Streamlit • Transformers • Blockchain • NLP
     </p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
