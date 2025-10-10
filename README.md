@@ -95,7 +95,7 @@ Helps protect users by providing early warnings and allowing for escalation or r
 ## Key Features  
 
 ### Beautiful UI/UX  
-- Modern gradient design  
+- Modern gradient design (UX/UI designed with assistance from **Claude AI**)  
 - Responsive layout  
 - Intuitive navigation  
 - Dual views: Post Owner & Commenter  
@@ -134,35 +134,21 @@ Helps protect users by providing early warnings and allowing for escalation or r
 
 ## Tech Stack  
 
-### Backend
-- Python  
-- Transformers (Hugging Face)  
-- PyTorch  
-- Pandas  
-- Hashlib  
-
-### Frontend
-- Streamlit  
-- Plotly  
-- Custom CSS  
-
-### AI/ML
-- Toxic-BERT (pre-trained)  
-- BERT architecture (I learned and implemented BERT for threat detection)  
-- NLP techniques  
-
-### Blockchain
-- Custom Python implementation  
-- SHA-256 cryptographic hashing  
-- Chain integrity verification  
+| Layer       | Technologies & Notes |
+|------------|--------------------|
+| **Backend** | Python, Pandas, Hashlib, Transformers (Hugging Face), PyTorch |
+| **Frontend** | Streamlit, Plotly, Custom CSS |
+| **AI/ML** | Pre-trained Toxic-BERT (used for real-time threat detection), NLP techniques, BERT architecture understanding and implementation |
+| **Blockchain** | Custom Python implementation, SHA-256 cryptographic hashing, Chain integrity verification |
 
 ---
 
 ## Personal Contributions and Learning  
 
-- Learned about **BERT** and applied it for real-time harassment detection.  
+- Learned about **BERT** and applied the pre-trained model for real-time harassment detection.  
 - Implemented **coordinated attack detection** linking multiple accounts.  
 - Created interactive **graphs using Plotly** to visualize attack patterns and threat statistics.  
+- Assisted with UX/UI design using **Claude AI**.  
 
 ---
 
@@ -170,7 +156,7 @@ Helps protect users by providing early warnings and allowing for escalation or r
 
 - Language Expansion: Add support for Indian regional languages (Tamil, Bengali, Marathi, Telugu, etc.)  
 - Victim Support Network: Integration with helplines, NGOs, and law enforcement for direct reporting  
-- Custom Dataset Training: Train a custom dataset to improve accuracy and severity classification  
+- Custom Dataset Training: Train on custom dataset to improve accuracy and correct labels (Normal, Neutral, Hate, Sexual harassment, etc.)  
 - Legal Reporting Automation: Auto-generate FIR-ready evidence reports for faster justice delivery  
 
 ---
