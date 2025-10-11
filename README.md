@@ -151,4 +151,4 @@ Helps protect users by providing early warnings and allowing for escalation or r
 
 ---
 
-**SafeGuard AI** — Empowering safer digital spaces with trust, technology, and truth.
+**SafeGuard AI** — Empowering safer digital spaces with trust, technology, truth, and accountability.
