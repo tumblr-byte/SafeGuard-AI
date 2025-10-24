@@ -1,8 +1,7 @@
 # SafeGuard AI  
 
 ## Intelligent Real-Time Harassment Detection System  
-**Built for:** Thales GenTech India Hackathon 2025  
-**Theme:** Cybersecurity  
+  
 
 ---
 
